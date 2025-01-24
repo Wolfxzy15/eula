@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <img src="Character_Eula_Full_Wish.webp" alt="none">
+    <script>
+        let isScrolling = false;
+      
+        window.addEventListener('wheel', function(e) {
+          if (isScrolling) return;
+          isScrolling = true;
+      
+          const nextPage = e.deltaY > 0 ? 'practice2.html' : 'practice.html';
+          const direction = e.deltaY > 0 ? -100 : 100;
+      
+          document.body.style.transition = "transform 1s ease";
+          document.body.style.transform = `translateY(${direction}%)`;
+      
+          setTimeout(() => {
+            window.location.href = nextPage;
+          }, 1000);
+        });
+      </script>
+      
+</body>
+</html>

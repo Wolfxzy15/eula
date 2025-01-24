@@ -1,0 +1,159 @@
+body {
+    background-color: lightblue;
+    margin: 0;
+}
+
+.vid-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+}
+
+#eulalogo {
+    width: 40vw;
+    height: auto;
+    bottom: 0px;
+    right: 5vw;
+    position: absolute;
+}
+
+#genshin {
+    width: 7vw;
+    height: auto;
+    top: 0px;
+    left: 7.5vw;
+    position: fixed;
+}
+
+
+
+
+#button {
+    width: 20vw;
+    height: auto;
+    bottom: 5vw;
+    right: 35vw;
+    position: absolute;
+    transition: transform 1s ease;
+}
+
+#button:hover {
+    transform: scale(1.3);
+}
+
+
+#video {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #a2c7e7;
+    padding: 5px;
+}
+
+#closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+}
+
+.information {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#namecard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#splash {
+    width: 85%;
+    height: 100%;
+    bottom: 0vw;
+    right: 10px;
+    position: absolute;
+    image-rendering: crisp-edges;
+    object-fit: contain;
+    z-index: 2;
+}
+
+#eula {
+    width: 30vw;
+    height: auto;
+    top: 20%;
+    left: 5%;
+    position: absolute;
+    
+}
+
+#lawrence {
+    position: absolute;
+    width: 50%;
+    z-index: 1;
+    bottom: 25%;
+    left: 8%;
+}
+
+#micbutton {
+    position: absolute;
+    width: 2.5%;
+    z-index: 2;
+    bottom: 10%;
+    left: 14.6%;
+    transition: transform 1s ease;
+}
+
+#micbutton:hover {
+    transform: scale(1.1);
+}
+
+#VA {
+    position: absolute;
+    width: 9%;
+    z-index: 1;
+    bottom: 10%;
+    left: 8%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 1vh;
+    right: 2vw;
+    gap: 1vw;
+    z-index: 1000;
+  }
+  
+  .button-container a img,
+  .button-container img {
+    width: 2.5vw;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .button-container a img:hover,
+  .button-container img:hover {
+    transform: scale(1.1);
+  }
+  
+  

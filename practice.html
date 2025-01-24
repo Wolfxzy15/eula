@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="vid-container">
+    <img src="Untitled design.gif" id="background-video">
+
+    <img src="logo.png" id="eulalogo">
+    
+
+    <div class="button-container">
+
+    <img src="Genshin-Impact-Logo.png" id="genshin" >
+
+    <img src="music.png" id="pauseButton" onclick="toggleAudio()">
+    
+    <a href="https://genshin.hoyoverse.com/en/" target="_blank" class="buttons">
+      <img src="home.png" id="homeButton">
+    </a>
+
+    <a href="https://www.facebook.com/Genshinimpact/" target="_blank" class="buttons">
+        <img src="fb.png" id="fbButton">
+    </a>
+
+    <a href="https://x.com/GenshinImpact" target="_blank" class="buttons">
+        <img src="x.png" id="xButton">
+    </a>
+
+    <a href="https://www.instagram.com/genshinimpact/" target="_blank" class="buttons">
+        <img src="ig.png" id="igButton">
+    </a>
+
+    <a href="https://www.youtube.com/@GenshinImpact" target="_blank" class="buttons">
+        <img src="yt.png" id="ytButton">
+    </a>
+
+    
+    
+    </div>
+    <audio id="backgroundAudio" autoplay loop>
+      <source src="Dance of Aphros.mp3" type="audio/mp3">
+    </audio>
+
+    <a id="playButton">
+        <img src="play.gif" id="button" onclick="toggleAudio()">
+    </a>
+
+    <div id="video" style="display: none;">
+      <button id="closeButton" onclick="toggleAudio()">✖</button>
+      <iframe width="900" height="500" src="https://www.youtube.com/embed/Go7SeJ-yOL4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <script>
+      const backgroundAudio = document.getElementById('backgroundAudio');
+      const musicButton = document.getElementById('pauseButton');
+      
+      function toggleAudio() {
+        if (backgroundAudio.paused) {
+          backgroundAudio.play();
+          musicButton.src = 'music.png';
+        } else {
+          backgroundAudio.pause();
+          musicButton.src = 'music.png';
+        }
+      }
+
+      document.getElementById("playButton").onclick = function() {
+        document.getElementById("video").style.display = "block";
+        backgroundAudio.pause();
+        musicButton.src = 'music.png';
+      };
+
+      document.getElementById("closeButton").onclick = function() {
+        const videoContainer = document.getElementById("video");
+        videoContainer.style.display = "none";
+        const iframe = videoContainer.querySelector("iframe");
+        iframe.src = iframe.src;
+
+        if (backgroundAudio.paused) {
+          backgroundAudio.play();
+          musicButton.src = 'music.png';
+        }
+      };
+    </script>
+  </div>
+
+  <div class="information">
+    <img src="namecard.webp" id="namecard">
+    <img src="anothersplash.png" id="splash">
+    <img src="lawrence.png" id="lawrence">
+    <img src="micbutton.png" id="micbutton" onclick="toggleVA()">
+    <img src="VA.png" id="VA">
+    <img src="eula.png" id="eula">
+
+    <audio id="eulaAudio">
+      <source src="eulaVoice.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+      function toggleVA() {
+        const eulaAudio = document.getElementById('eulaAudio');
+        const micButton = document.getElementById('micbutton');
+
+        if (eulaAudio.paused) {
+          backgroundAudio.pause(); // Pause the background audio
+          eulaAudio.play();
+          micButton.src = "micbutton.png"; // Change mic button image to active
+        } else {
+          eulaAudio.pause();
+          micButton.src = "micbutton.png"; // Change mic button image back to inactive
+          backgroundAudio.play(); // Resume background audio
+        }
+
+        // Resume background audio when eulaAudio finishes
+        eulaAudio.onended = () => {
+          backgroundAudio.play();
+          micButton.src = "micbutton.png"; // Reset mic button image
+        };
+      }
+    </script>
+  </div>
+</body>
+</html>
